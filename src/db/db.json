@@ -1,0 +1,63 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "nombre": "Gustavo",
+      "email": "gus@gmail.com",
+      "password": "$2b$10$8G4E.3RPbuh4O6M44m8G2uvClcNpCDjRzcFYk/dBYItmf6mCuka7m",
+      "rol": "admin",
+      "ubicacion": "San Martin",
+      "experiencia": "4 años"
+    },
+    {
+      "id": 2,
+      "nombre": "Gabriel",
+      "email": "gabi@gmail.com",
+      "password": "$2b$10$I5oM6tq1c4lQI28tLa9Pcu8.xfbhkf0y.s00IVEGlDWu9RJUxLDBW",
+      "rol": "user",
+      "ubicacion": "Capital",
+      "experiencia": "4 años"
+    },
+    {
+      "id": 3,
+      "nombre": "Javier",
+      "email": "jav@gmail.com",
+      "password": "$2b$10$cPtxInjiw/FwtiJy2wtCkOpnkP83VkQxOt01FF1/YXsQhuWBVAR5C",
+      "rol": "user",
+      "ubicacion": "San Martin",
+      "experiencia": "4 años"
+    },
+    {
+      "id": 4,
+      "nombre": "Javier",
+      "email": "jav@gmail.com",
+      "password": "$2b$10$vd4kBOLVasri3AYwnDEf9uUgQ4DhJKctpUSeLa8P2ZdFvLoUDbk.6",
+      "rol": "user",
+      "ubicacion": "San Martin",
+      "experiencia": "4 años"
+    }
+  ],
+  "productos": [
+    {
+      "id": 1,
+      "nombre": "Mouse Logitech G203",
+      "precio": 15000,
+      "stock": 10,
+      "categoria": "Periféricos"
+    },
+    {
+      "id": 2,
+      "nombre": "Teclado Redragon Kumara",
+      "precio": 38000,
+      "stock": 20,
+      "categoria": "Periféricos"
+    },
+    {
+      "id": 3,
+      "nombre": "Pantalla led 40'",
+      "precio": 25000,
+      "stock": 20,
+      "categoria": "Periféricos"
+    }
+  ]
+}

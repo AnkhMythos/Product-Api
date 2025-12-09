@@ -1,0 +1,35 @@
+[
+  {
+    "id": "prod-1",
+    "name": "Laptop Gaming Pro",
+    "description": "Laptop de alto rendimiento para gaming",
+    "price": 1299.99,
+    "stock": 15,
+    "category": "Tecnología",
+    "sku": "LAP-GAM-001",
+    "createdAt": "2025-11-19T19:27:33.905Z",
+    "updatedAt": "2025-11-19T19:27:33.906Z"
+  },
+  {
+    "id": "prod-2",
+    "name": "Smartphone Android",
+    "description": "Teléfono inteligente con Android latest",
+    "price": 599.99,
+    "stock": 30,
+    "category": "Tecnología",
+    "sku": "PHN-AND-001",
+    "createdAt": "2025-11-19T19:27:33.906Z",
+    "updatedAt": "2025-11-19T19:27:33.906Z"
+  },
+  {
+    "id": "prod-3",
+    "name": "Auriculares Inalámbricos",
+    "description": "Auriculares con cancelación de ruido",
+    "price": 199.99,
+    "stock": 25,
+    "category": "Audio",
+    "sku": "AUD-WRL-001",
+    "createdAt": "2025-11-19T19:27:33.906Z",
+    "updatedAt": "2025-11-19T19:27:33.906Z"
+  }
+]

@@ -1,0 +1,348 @@
+[
+    {
+    "id": "2",
+    "title": "Camisetas casuales premium de corte entallado para hombre",
+    "price": 22.3,
+    "description": "Estilo ajustado, manga larga raglán en contraste, tapeta Henley de tres botones, tejido ligero y suave para mayor transpirabilidad y comodidad. Camisas con costuras sólidas y cuello redondo, ideales para ropa informal y para los fanáticos del béisbol. El cuello redondo estilo Henley incluye una tapeta de tres botones",
+    "category": "men's clothing",
+    "image": "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_t.png",
+    "rating": {
+      "rate": 4.1,
+      "count": 259
+    }
+  },
+  {
+    "id": "3",
+    "title": "Chaqueta de algodón para hombre",
+    "price": 55.99,
+    "description": "Chaquetas de abrigo ideales para primavera, otoño e invierno, ideales para diversas ocasiones, como trabajar, hacer senderismo, acampar, escalar montañas, andar en bicicleta, viajar y otras actividades al aire libre. Un regalo ideal para ti o un familiar. Un cálido abrazo para papá, esposo o hijo en este Día de Acción de Gracias o Navidad.",
+    "category": "men's clothing",
+    "image": "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_t.png",
+    "rating": {
+      "rate": 4.7,
+      "count": 500
+    }
+  },
+  {
+    "id": "4",
+    "title": "Mens Casual Slim Fit 4",
+    "price": 15.99,
+    "description": "The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.",
+    "category": "men's clothing",
+    "image": "https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_t.png",
+    "rating": {
+      "rate": 2.1,
+      "count": 430
+    }
+  },
+  {
+    "id": "5",
+    "title": "John Hardy Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet",
+    "price": 695,
+    "description": "From our Legends Collection, the Naga was inspired by the mythical water dragon that protects the ocean's pearl. Wear facing inward to be bestowed with love and abundance, or outward for protection.",
+    "category": "jewelery",
+    "image": "https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_t.png",
+    "rating": {
+      "rate": 4.6,
+      "count": 400
+    }
+  },
+  {
+    "id": "6",
+    "title": "Solid Gold Petite Micropave ",
+    "price": 168,
+    "description": "Satisfacción garantizada. Devuelva o cambie cualquier pedido en un plazo de 30 días. Diseñado y vendido por Hafeez Center en Estados Unidos. Satisfacción garantizada. Devuelva o cambie cualquier pedido en un plazo de 30 días.",
+    "category": "jewelery",
+    "image": "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_t.png",
+    "rating": {
+      "rate": 3.9,
+      "count": 70
+    }
+  },
+  {
+    "id": "7",
+    "title": "White Gold Plated Princess",
+    "price": 9.99,
+    "description": "Classic Created Wedding Engagement Solitaire Diamond Promise Ring for Her. Gifts to spoil your love more for Engagement, Wedding, Anniversary, Valentine's Day...",
+    "category": "jewelery",
+    "image": "https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_t.png",
+    "rating": {
+      "rate": 3,
+      "count": 400
+    }
+  },
+  {
+    "id": "8",
+    "title": "Pierced Owl Rose Gold Plated Stainless Steel Double",
+    "price": 10.99,
+    "description": "Rose Gold Plated Double Flared Tunnel Plug Earrings. Made of 316L Stainless Steel",
+    "category": "jewelery",
+    "image": "https://fakestoreapi.com/img/51UDEzMJVpL._AC_UL640_QL65_ML3_t.png",
+    "rating": {
+      "rate": 1.9,
+      "count": 100
+    }
+  },
+  {
+    "id": "9",
+    "title": "WD 2TB Elements Portable External Hard Drive - USB 3.0 ",
+    "price": 64,
+    "description": "\tCompatibilidad con USB 3.0 y USB 2.0 Transferencias de datos rápidas Mejora el rendimiento de la PC Alta capacidad; Compatibilidad NTFS formateado para Windows 10, Windows 8.1, Windows 7; Es posible que se requiera reformatear para otros sistemas operativos; La compatibilidad puede variar según la configuración del hardware y el sistema operativo del usuario",
+    "category": "electronics",
+    "image": "https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_t.png",
+    "rating": {
+      "rate": 3.3,
+      "count": 203
+    }
+  },
+  {
+    "id": "10",
+    "title": "SanDisk SSD PLUS 1TB Internal SSD - SATA III 6 Gb/s",
+    "price": 109,
+    "description": "Fácil actualización para un arranque, apagado, carga de aplicaciones y respuesta más rápidos (en comparación con el disco duro SATA de 2,5” de 5400 RPM; basado en especificaciones publicadas y pruebas comparativas internas con puntajes PCMark Vantage) Aumenta el rendimiento de escritura en ráfagas, lo que lo hace ideal para cargas de trabajo típicas de PC El equilibrio perfecto entre rendimiento y confiabilidad Velocidades de lectura/escritura de hasta 535 MB/s/450 MB/s (basado en pruebas internas; el rendimiento puede variar según la capacidad de la unidad, el dispositivo host, el sistema operativo y la aplicación).",
+    "category": "electronics",
+    "image": "https://fakestoreapi.com/img/61U7T1koQqL._AC_SX679_t.png",
+    "rating": {
+      "rate": 2.9,
+      "count": 470
+    }
+  },
+  {
+    "id": "11",
+    "title": "Silicon Power 256GB SSD 3D NAND A55 SLC Cache Performance Boost SATA III 2.5",
+    "price": 109,
+    "description": "3D NAND flash are applied to deliver high transfer speeds Remarkable transfer speeds that enable faster bootup and improved overall system performance. The advanced SLC Cache Technology allows performance boost and longer lifespan 7mm slim design suitable for Ultrabooks and Ultra-slim notebooks. Supports TRIM command, Garbage Collection technology, RAID, and ECC (Error Checking & Correction) to provide the optimized performance and enhanced reliability.",
+    "category": "electronics",
+    "image": "https://fakestoreapi.com/img/71kWymZ+c+L._AC_SX679_t.png",
+    "rating": {
+      "rate": 4.8,
+      "count": 319
+    }
+  },
+  {
+    "id": "12",
+    "title": "WD 4TB Gaming Drive Works with Playstation 4 Portable External Hard Drive",
+    "price": 114,
+    "description": "Expand your PS4 gaming experience, Play anywhere Fast and easy, setup Sleek design with high capacity, 3-year manufacturer's limited warranty",
+    "category": "electronics",
+    "image": "https://fakestoreapi.com/img/61mtL65D4cL._AC_SX679_t.png",
+    "rating": {
+      "rate": 4.8,
+      "count": 400
+    }
+  },
+  {
+    "id": "13",
+    "title": "Acer SB220Q bi 21.5 inches Full HD (1920 x 1080) IPS Ultra-Thin",
+    "price": 599,
+    "description": "\tPantalla IPS panorámica Full HD (1920 x 1080) de 21.5 pulgadas y tecnología Radeon FreeSync. No compatible con soporte VESA. Frecuencia de actualización: 75 Hz (a través del puerto HDMI). Diseño sin marco | Ultrafino | Tiempo de respuesta de 4 ms | Panel IPS. Relación de aspecto: 16:9. Color compatible: 16,7 millones de colores. Brillo: 250 nits. Ángulo de inclinación: de 5 a 15 grados. Ángulo de visión horizontal: 178 grados. Ángulo de visión vertical: 178 grados. 75 Hz.",
+    "category": "electronics",
+    "image": "https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_t.png",
+    "rating": {
+      "rate": 2.9,
+      "count": 250
+    }
+  },
+  {
+    "id": "14",
+    "title": "Samsung 49-Inch CHG90 144Hz Curved Gaming Monitor (LC49HG90DMNXZA) – Super Ultrawide Screen QLED ",
+    "price": 999.99,
+    "description": "49 INCH SUPER ULTRAWIDE 32:9 CURVED GAMING MONITOR with dual 27 inch screen side by side QUANTUM DOT (QLED) TECHNOLOGY, HDR support and factory calibration provides stunningly realistic and accurate color and contrast 144HZ HIGH REFRESH RATE and 1ms ultra fast response time work to eliminate motion blur, ghosting, and reduce input lag",
+    "category": "electronics",
+    "image": "https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_t.png",
+    "rating": {
+      "rate": 2.2,
+      "count": 140
+    }
+  },
+  {
+    "id": "15",
+    "title": "BIYLACLESEN Women's 3-in-1 Snowboard Jacket Winter Coats",
+    "price": 56.99,
+    "description": "Note:The Jackets is US standard size, Please choose size as your usual wear Material: 100% Polyester; Detachable Liner Fabric: Warm Fleece. Detachable Functional Liner: Skin Friendly, Lightweigt and Warm.Stand Collar Liner jacket, keep you warm in cold weather. Zippered Pockets: 2 Zippered Hand Pockets, 2 Zippered Pockets on Chest (enough to keep cards or keys)and 1 Hidden Pocket Inside.Zippered Hand Pockets and Hidden Pocket keep your things secure. Humanized Design: Adjustable and Detachable Hood and Adjustable cuff to prevent the wind and water,for a comfortable fit. 3 in 1 Detachable Design provide more convenience, you can separate the coat and inner as needed, or wear it together. It is suitable for different season and help you adapt to different climates",
+    "category": "women's clothing",
+    "image": "https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_t.png",
+    "rating": {
+      "rate": 2.6,
+      "count": 235
+    }
+  },
+  {
+    "id": "16",
+    "title": "Lock and Love Women's Removable Hooded Faux Leather Moto Biker Jacket",
+    "price": 29.95,
+    "description": "100% POLYURETHANE(shell) 100% POLYESTER(lining) 75% POLYESTER 25% COTTON (SWEATER), Faux leather material for style and comfort / 2 pockets of front, 2-For-One Hooded denim style faux leather jacket, Button detail on waist / Detail stitching at sides, HAND WASH ONLY / DO NOT BLEACH / LINE DRY / DO NOT IRON",
+    "category": "women's clothing",
+    "image": "https://fakestoreapi.com/img/81XH0e8fefL._AC_UY879_t.png",
+    "rating": {
+      "rate": 2.9,
+      "count": 340
+    }
+  },
+  {
+    "id": "17",
+    "title": "Rain Jacket Women Windbreaker Striped Climbing Raincoats",
+    "price": 39.99,
+    "description": "Lightweight perfet for trip or casual wear---Long sleeve with hooded, adjustable drawstring waist design. Button and zipper front closure raincoat, fully stripes Lined and The Raincoat has 2 side pockets are a good size to hold all kinds of things, it covers the hips, and the hood is generous but doesn't overdo it.Attached Cotton Lined Hood with Adjustable Drawstrings give it a real styled look.",
+    "category": "women's clothing",
+    "image": "https://fakestoreapi.com/img/71HblAHs5xL._AC_UY879_-2t.png",
+    "rating": {
+      "rate": 3.8,
+      "count": 679
+    }
+  },
+  {
+    "id": "18",
+    "title": "MBJ Women's Solid Short Sleeve Boat Neck V ",
+    "price": 9.85,
+    "description": "95% RAYON 5% SPANDEX, Made in USA or Imported, Do Not Bleach, Lightweight fabric with great stretch for comfort, Ribbed on sleeves and neckline / Double stitching on bottom hem",
+    "category": "women's clothing",
+    "image": "https://fakestoreapi.com/img/71z3kpMAYsL._AC_UY879_t.png",
+    "rating": {
+      "rate": 4.7,
+      "count": 130
+    }
+  },
+  {
+    "id": "19",
+    "title": "Opna Women's Short Sleeve Moisture",
+    "price": 7.95,
+    "description": "100% Polyester, Machine wash, 100% cationic polyester interlock, Machine Wash & Pre Shrunk for a Great Fit, Lightweight, roomy and highly breathable with moisture wicking fabric which helps to keep moisture away, Soft Lightweight Fabric with comfortable V-neck collar and a slimmer fit, delivers a sleek, more feminine silhouette and Added Comfort",
+    "category": "women's clothing",
+    "image": "https://fakestoreapi.com/img/51eg55uWmdL._AC_UX679_t.png",
+    "rating": {
+      "rate": 4.5,
+      "count": 146
+    }
+  },
+  {
+    "id": "20",
+    "title": "DANVOUY Womens T Shirt Casual Cotton Short",
+    "price": 12.99,
+    "description": "95%Cotton,5%Spandex, Features: Casual, Short Sleeve, Letter Print,V-Neck,Fashion Tees, The fabric is soft and has some stretch., Occasion: Casual/Office/Beach/School/Home/Street. Season: Spring,Summer,Autumn,Winter.",
+    "category": "women's clothing",
+    "image": "https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_t.png",
+    "rating": {
+      "rate": 3.6,
+      "count": 145
+    }
+  },
+  {
+    "title": "DZ-213553-LLQ",
+    "price": "6",
+    "description": "Camiseta de lino con estampado geométrico étnico africano para hombre",
+    "category": "Camiseta Hombre",
+    "image": "https://img-va.myshopline.com/image/store/1750144145033/c2ae0a552886a2f901c7214f6d1adbd8_800x.jpg?w=800&h=800&q=90",
+    "rating": {
+      "rate": 0,
+      "count": 0
+    },
+    "rate": 61,
+    "count": 38,
+    "id": "21"
+  },
+  {
+    "title": "Camisa egipcia",
+    "price": "3.45",
+    "description": "Camisa de lino con bordado en contraste del antiguo Ojo de Horus egipcio",
+    "category": "Ropa de Hombre",
+    "image": "https://img-va.myshopline.com/image/store/1750144145033/6f0ffe371d047738f8d41c2081f6b157_800x.jpg?w=800&h=800&q=90",
+    "rating": {
+      "rate": 0,
+      "count": 0
+    },
+    "rate": 62,
+    "count": 65,
+    "id": "22"
+  },
+  {
+    "title": "Pantalón Lino",
+    "price": "5.7",
+    "description": "Pantalones holgados de lino para hombre con bordado de máscara tribal africana",
+    "category": "Ropa de Hombre",
+    "image": "https://img-va.myshopline.com/image/store/1750144145033/cc789d75dd41402d49b21277f2f08dc1_1000x.jpg?w=1000&h=1000&q=90",
+    "rating": {
+      "rate": 0,
+      "count": 0
+    },
+    "rate": 59,
+    "count": 91,
+    "id": "23"
+  },
+  {
+    "title": "Dragon",
+    "price": "15",
+    "description": "Shein vestido minifalda Dragón",
+    "category": "women's clothing",
+    "image": "https://img.ltwebstatic.com/images3_pi/2024/09/12/93/1726112231259000b8773f256f51ee713942ac7ab3_thumbnail_560x.webp",
+    "rating": {
+      "rate": 0,
+      "count": 0
+    },
+    "rate": 3,
+    "count": 100,
+    "id": "24"
+  },
+  {
+    "title": "Gorro Mesh",
+    "price": "19990",
+    "description": "Gorro Calado Tejido Crochet Mesh Hat Boho varios colores A Medida Geométrico",
+    "category": "gorros",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_2X_601888-MLA91609497004_092025-F.webp",
+    "rating": {
+      "rate": 0,
+      "count": 0
+    },
+    "rate": 92,
+    "count": 72,
+    "id": "25"
+  },
+  {
+    "title": "T-Shirt-Rex",
+    "price": "30000",
+    "description": "Producto creado desde la aplicación Node JS",
+    "category": "remeras",
+    "image": "https://cdn11.bigcommerce.com/s-86394/images/stencil/1280x1280/products/6022/108566/10_3102_web__83362.1699910708.jpg?c=2",
+    "rating": {
+      "rate": 0,
+      "count": 0
+    },
+    "rate": 30,
+    "count": 95,
+    "id": "26"
+  },
+  {
+    "title": "Producto de Prueba desde API",
+    "price": 99.99,
+    "description": "Este es un producto de prueba",
+    "category": "testing",
+    "image": {},
+    "rating": 87,
+    "rate": 81,
+    "count": 18,
+    "id": "27",
+    "name": "Producto de Prueba desde API",
+    "images": [
+      null
+    ],
+    "stock": 50,
+    "sku": "TEST-001"
+  },
+  {
+    "title": "Producto de Prueba desde API",
+    "price": 99.99,
+    "description": "Este es un producto de prueba",
+    "category": "testing",
+    "image": {},
+    "rating": 66,
+    "rate": 7,
+    "count": 43,
+    "id": "28",
+    "name": "Producto de Prueba desde API",
+    "images": [
+      null
+    ],
+    "stock": 50,
+    "sku": "TEST-001"
+  }
+]

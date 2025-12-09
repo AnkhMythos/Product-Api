@@ -1,0 +1,35 @@
+# Credenciales Firebase
+serviceAccountKey.json
+src/credentials/
+src/serviceAccountKey.json
+src/credentials/node-api-rest-2024-firebase-adminsdk-fbsvc-c96f8e0a00.json
+src/data/users.json
+src/db/user.json
+src/db/test-db.js
+src/models/userModel.js
+src/scripts/generateToken.js
+src/scripts/initJsonData.js
+src/scripts/testEndpoint.js
+
+# Node
+node_modules/
+
+# Frontend demos
+frontend/no/
+frontend/tienda-demo.html
+frontend/tienda-node.html
+
+# Backups
+src/controllers/authController.bak
+src/middlewares/auth.bak
+src/models/productModel.bak
+src/models/userModel.bak
+src/routes/productRoutes.bak
+src/services/authService.bak
+src/services/productService.bak
+src/index.bak
+
+# Environment
+*.git/
+.env
+*.bak

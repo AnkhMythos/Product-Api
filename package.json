@@ -1,0 +1,44 @@
+{
+  "name": "product-api",
+  "version": "1.0.0",
+  "description": "API REST para gestión de productos con autenticación JWT",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "init-data": "node src/scripts/initJsonData.js",
+    "dev:json": "npm run init-data && npm run dev",
+    "test:mockapi": "cross-env DATA_SOURCE=mockapi node src/scripts/testMockapi.js",
+    "test:end": "node src/scripts/testEndpoint.js"
+  },
+  "keywords": [
+    "api",
+    "rest",
+    "firebase",
+    "jwt",
+    "products"
+  ],
+  "author": "JCR",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "firebase": "^12.6.0",
+    "firebase-admin": "^11.8.0",
+    "helmet": "^7.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "nodemon": "^3.0.1"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
