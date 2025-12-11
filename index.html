@@ -1,0 +1,514 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Tienda Demo (React - Babel CDN)</title>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Usamos fuentes básicas para el demo -->
+    <style>
+      body {
+        font-family: Inter, Segoe UI, Roboto, Arial, sans-serif;
+        background: #f8fafc;
+        padding: 0;
+        margin: 0;
+      }
+      .loading {
+        text-align: center;
+        padding: 40px;
+        color: #6b7280;
+      }
+      .error {
+        background: #fee2e2;
+        color: #dc2626;
+        padding: 12px;
+        border-radius: 8px;
+        margin: 20px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <!-- React + ReactDOM + Babel (solo para desarrollo/demo) -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- Código de la app en JSX, transformado en el navegador por Babel -->
+    <script type="text/babel">
+      const { useState, useEffect, useMemo } = React;
+
+      const unique = (arr) => Array.from(new Set(arr.filter(Boolean)));
+
+      function Header({ cartCount, onToggleFilters, query, setQuery, onToggleCart }){
+        return (
+          <header style={{background:'#fff',boxShadow:'0 1px 2px rgba(0,0,0,.04)', position: 'sticky', top: 0, zIndex: 50}}>
+            <div style={{maxWidth:1100,margin:'0 auto',padding:'12px 16px',display:'flex',alignItems:'center',justifyContent:'space-between'}}>
+              <h1 style={{fontSize:18,margin:0}}>Mi Tienda</h1>
+              <div style={{display:'flex',gap:8,alignItems:'center'}}>
+                <input 
+                  value={query} 
+                  onChange={(e)=>setQuery(e.target.value)} 
+                  placeholder="Buscar..." 
+                  style={{padding:'6px 10px',border:'1px solid #ddd',borderRadius:6}} 
+                />
+                <button 
+                  onClick={onToggleFilters} 
+                  style={{padding:'6px 10px',border:'1px solid #ddd',borderRadius:6,background:'#fff',cursor:'pointer'}}
+                >
+                  Filtros
+                </button>
+                <button 
+                  onClick={onToggleCart}
+                  style={{padding:'6px 10px',border:'1px solid #ddd',borderRadius:6,background:'#fff',cursor:'pointer'}}
+                >
+                  🛒 Carrito ({cartCount})
+                </button>
+              </div>
+            </div>
+          </header>
+        );
+      }
+
+      function Filters({ products, filters, setFilters, onClear }){
+        const designers = useMemo(()=> unique(products.map(p=>p.designer)), [products]);
+        const categories = useMemo(()=> unique(products.map(p=>p.category)), [products]);
+
+        const toggle = (key, value) => {
+          setFilters(prev => {
+            const set = new Set(prev[key]);
+            if(set.has(value)) set.delete(value);
+            else set.add(value);
+            return {...prev, [key]: set};
+          });
+        };
+
+        return (
+          <aside style={{padding:12,background:'#fff',borderRadius:8, boxShadow: '0 1px 3px rgba(0,0,0,0.1)'}}>
+            <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',marginBottom:8}}>
+              <strong>Filtros</strong>
+              <button 
+                onClick={onClear} 
+                style={{padding:'4px 8px',border:'1px solid #ddd',borderRadius:4,background:'#fff',cursor:'pointer',fontSize:'12px'}}
+              >
+                Limpiar
+              </button>
+            </div>
+            <div style={{marginBottom:12}}>
+              <div style={{fontWeight:600,marginBottom:4}}>Diseñador</div>
+              <div style={{display:'flex',gap:6,flexWrap:'wrap',marginTop:6}}>
+                {designers.map(d=> (
+                  <button 
+                    key={d} 
+                    onClick={()=>toggle('designer', d)} 
+                    style={{
+                      padding:'6px 8px',
+                      border:'1px solid #ddd',
+                      borderRadius:6,
+                      background: filters.designer.has(d) ? '#000' : '#fff',
+                      color: filters.designer.has(d) ? '#fff' : '#000',
+                      cursor:'pointer',
+                      fontSize:'12px'
+                    }}
+                  >
+                    {d}
+                  </button>
+                ))}
+              </div>
+            </div>
+            <div>
+              <div style={{fontWeight:600,marginBottom:4}}>Categoría</div>
+              <div style={{display:'flex',gap:6,flexWrap:'wrap',marginTop:6}}>
+                {categories.map(c=> (
+                  <button 
+                    key={c} 
+                    onClick={()=>toggle('category', c)} 
+                    style={{
+                      padding:'6px 8px',
+                      border:'1px solid #ddd',
+                      borderRadius:6,
+                      background: filters.category.has(c) ? '#000' : '#fff',
+                      color: filters.category.has(c) ? '#fff' : '#000',
+                      cursor:'pointer',
+                      fontSize:'12px'
+                    }}
+                  >
+                    {c}
+                  </button>
+                ))}
+              </div>
+            </div>
+          </aside>
+        );
+      }
+
+      function ProductCard({ p, onOpen, onAddToCart }){
+        return (
+          <div style={{background:'#fff',borderRadius:8,overflow:'hidden',boxShadow:'0 2px 8px rgba(2,6,23,.06)'}}>
+            <div style={{height:220,background:'#f3f4f6'}} onClick={()=>onOpen(p)} style={{cursor:'pointer'}}>
+              <img src={p.image} alt={p.title} style={{width:'100%',height:'100%',objectFit:'cover'}} />
+            </div>
+            <div style={{padding:12}}>
+              <div style={{fontSize:12,color:'#6b7280'}}>{p.designer}</div>
+              <div style={{fontWeight:600,fontSize:'14px',marginTop:'4px'}}>{p.title}</div>
+              <div style={{marginTop:8,fontWeight:'bold',fontSize:'16px'}}>{p.currency} {p.price}</div>
+              <div style={{marginTop:10,display:'flex',gap:8}}>
+                <button 
+                  onClick={()=>onOpen(p)} 
+                  style={{padding:'6px 10px',border:'1px solid #ddd',borderRadius:6,background:'#fff',cursor:'pointer',flex:1}}
+                >
+                  Ver
+                </button>
+                <button 
+                  onClick={(e)=>{e.stopPropagation();onAddToCart(p);}} 
+                  style={{padding:'6px 10px',background:'#000',color:'#fff',borderRadius:6,border:'none',cursor:'pointer',flex:1}}
+                >
+                  Comprar
+                </button>
+              </div>
+            </div>
+          </div>
+        );
+      }
+
+      function CartPanel({ cart, setCart, onClose }){
+        const total = cart.reduce((s,i)=> s + (i.price || 0) * (i.qty || 1), 0);
+
+        const inc = (id)=> setCart(prev => prev.map(x => x.id === id ? {...x, qty: (x.qty||1)+1} : x));
+        const dec = (id)=> setCart(prev => prev.map(x => x.id === id ? {...x, qty: Math.max(1,(x.qty||1)-1)} : x));
+        const remove = (id)=> setCart(prev => prev.filter(x => x.id !== id));
+
+        const checkout = ()=>{
+          if(cart.length===0){ 
+            alert('El carrito está vacío'); 
+            return; 
+          }
+          
+          const orderDetails = cart.map(item => 
+            `${item.title} x${item.qty} - €${(item.price * item.qty).toFixed(2)}`
+          ).join('\n');
+          
+          alert(`Compra simulada exitosa!\n\nPedido:\n${orderDetails}\n\nTotal: €${total.toFixed(2)}\n\nGracias por tu compra.`);
+          setCart([]);
+          onClose();
+        };
+
+        return (
+          <div style={{position:'fixed',right:16,top:80,width:360,maxHeight:'70vh',overflow:'auto',background:'#fff',boxShadow:'0 8px 32px rgba(2,6,23,.16)',borderRadius:8,padding:12,zIndex:60}}>
+            <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',marginBottom:8}}>
+              <strong style={{fontSize:'18px'}}>Carrito</strong>
+              <button onClick={onClose} style={{padding:'6px 8px',border:'1px solid #ddd',borderRadius:6,background:'#fff',cursor:'pointer'}}>
+                ✕
+              </button>
+            </div>
+
+            {cart.length===0 ? (
+              <div style={{padding:12,color:'#6b7280',textAlign:'center'}}>Tu carrito está vacío</div>
+            ) : (
+              <div>
+                {cart.map(item => (
+                  <div key={item.id} style={{display:'flex',gap:8,alignItems:'center',padding:'12px 0',borderBottom:'1px solid #f1f5f9'}}>
+                    <div style={{width:56,height:56,flex:'0 0 56px'}}>
+                      <img src={item.image} alt={item.title} style={{width:'100%',height:'100%',objectFit:'cover',borderRadius:6}} />
+                    </div>
+                    <div style={{flex:1}}>
+                      <div style={{fontWeight:600,fontSize:'14px'}}>{item.title}</div>
+                      <div style={{fontSize:12,color:'#6b7280',marginTop:'2px'}}>
+                        €{item.price} · {item.sizes?.[0] || ''}
+                      </div>
+                      <div style={{marginTop:8,display:'flex',gap:6,alignItems:'center'}}>
+                        <button onClick={()=>dec(item.id)} style={{padding:'4px 8px',border:'1px solid #ddd',borderRadius:4,background:'#fff',cursor:'pointer'}}>
+                          -
+                        </button>
+                        <div style={{minWidth:28,textAlign:'center'}}>{item.qty || 1}</div>
+                        <button onClick={()=>inc(item.id)} style={{padding:'4px 8px',border:'1px solid #ddd',borderRadius:4,background:'#fff',cursor:'pointer'}}>
+                          +
+                        </button>
+                        <button onClick={()=>remove(item.id)} style={{marginLeft:8,padding:'4px 8px',border:'1px solid #ddd',borderRadius:4,background:'#fff',cursor:'pointer',fontSize:'12px'}}>
+                          Eliminar
+                        </button>
+                      </div>
+                    </div>
+                    <div style={{fontWeight:600}}>€{((item.price||0)*(item.qty||1)).toFixed(2)}</div>
+                  </div>
+                ))}
+
+                <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',marginTop:16,paddingTop:12,borderTop:'2px solid #000'}}>
+                  <div style={{fontWeight:700,fontSize:'18px'}}>Total</div>
+                  <div style={{fontWeight:700,fontSize:'18px'}}>€{total.toFixed(2)}</div>
+                </div>
+
+                <div style={{marginTop:16,display:'flex',gap:8}}>
+                  <button 
+                    onClick={checkout} 
+                    style={{flex:1,padding:'12px',background:'#000',color:'#fff',borderRadius:6,border:'none',cursor:'pointer',fontWeight:'bold',fontSize:'14px'}}
+                  >
+                    Pagar
+                  </button>
+                  <button 
+                    onClick={()=>{if(window.confirm('¿Vaciar carrito?')){setCart([]);onClose();}}} 
+                    style={{padding:'12px',borderRadius:6,border:'1px solid #ddd',background:'#fff',cursor:'pointer',fontSize:'14px'}}
+                  >
+                    Vaciar
+                  </button>
+                </div>
+              </div>
+            )}
+          </div>
+        );
+      }
+
+      function ProductModal({ product, onClose, onAddToCart }){
+        if(!product) return null;
+        
+        return (
+          <div style={{position:'fixed',inset:0,background:'rgba(0,0,0,0.4)',display:'flex',alignItems:'center',justifyContent:'center',zIndex:100}}
+               onClick={onClose}>
+            <div style={{background:'#fff',width:'90%',maxWidth:800,borderRadius:8,overflow:'hidden'}}
+                 onClick={e => e.stopPropagation()}>
+              <div style={{display:'flex',flexDirection:'column',gap:12}}>
+                <div style={{display:'flex',justifyContent:'flex-end',padding:'8px 12px'}}>
+                  <button onClick={onClose} style={{background:'none',border:'none',fontSize:'20px',cursor:'pointer',color:'#666'}}>
+                    ✕
+                  </button>
+                </div>
+                <div style={{display:'flex',gap:12,padding:'0 20px 20px'}}>
+                  <img src={product.image} alt={product.title} style={{width:'50%',height:400,objectFit:'cover',borderRadius:'8px'}} />
+                  <div style={{padding:'0 0 0 20px',flex:1}}>
+                    <h2 style={{margin:'0 0 8px 0'}}>{product.title}</h2>
+                    <div style={{color:'#6b7280',fontSize:'14px',marginBottom:'12px'}}>{product.designer}</div>
+                    <div style={{fontSize:'24px',fontWeight:'bold',marginBottom:'16px'}}>{product.currency} {product.price}</div>
+                    <div style={{marginTop:12}}>
+                      <strong>Tallas:</strong> 
+                      <div style={{display:'flex',gap:'8px',marginTop:'8px'}}>
+                        {product.sizes.map(size => (
+                          <span key={size} style={{padding:'6px 12px',border:'1px solid #ddd',borderRadius:'4px',background:'#f8fafc'}}>
+                            {size}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                    <div style={{marginTop:12}}>
+                      <strong>Colores:</strong> 
+                      <div style={{display:'flex',gap:'8px',marginTop:'8px'}}>
+                        {product.colors.map(color => (
+                          <span key={color} style={{padding:'6px 12px',border:'1px solid #ddd',borderRadius:'4px',background:'#f8fafc'}}>
+                            {color}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                    <div style={{marginTop:20}}>
+                      <button 
+                        onClick={()=>{onAddToCart(product);alert(`¡${product.title} añadido al carrito!`);onClose();}} 
+                        style={{padding:'12px 24px',background:'#000',color:'#fff',borderRadius:6,border:'none',cursor:'pointer',fontWeight:'bold',fontSize:'16px',width:'100%'}}
+                      >
+                        Añadir al Carrito
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+      }
+
+      function App(){
+        const [products, setProducts] = useState([]);
+        const [loading, setLoading] = useState(true);
+        const [error, setError] = useState(null);
+        const [filtersOpen, setFiltersOpen] = useState(true);
+        const [filters, setFilters] = useState({ 
+          designer: new Set(), 
+          category: new Set(), 
+          size: new Set(), 
+          color: new Set() 
+        });
+        const [sort, setSort] = useState('recommendation');
+        const [query, setQuery] = useState('');
+        const [selected, setSelected] = useState(null);
+        const [cart, setCart] = useState(() => {
+          const savedCart = localStorage.getItem('tienda_cart');
+          return savedCart ? JSON.parse(savedCart) : [];
+        });
+        const [showCart, setShowCart] = useState(false);
+
+        // Guardar carrito en localStorage
+        useEffect(() => {
+          localStorage.setItem('tienda_cart', JSON.stringify(cart));
+        }, [cart]);
+
+        // Cargar productos desde la API
+        useEffect(() => {
+          const loadProducts = async () => {
+            try {
+              setLoading(true);
+              setError(null);
+              
+              const url = 'https://685ffd7dc55df675589fd403.mockapi.io/fakestoreapi/productos';
+              const res = await fetch(url);
+              
+              if (!res.ok) {
+                throw new Error(`Error HTTP: ${res.status}`);
+              }
+              
+              const data = await res.json();
+              
+              const mappedProducts = data.map(item => ({
+                id: item.id?.toString() || Math.random().toString(36).substr(2, 9),
+                title: item.title || item.name || 'Producto sin nombre',
+                designer: item.brand || item.designer || 'Marca desconocida',
+                category: item.category || 'general',
+                price: parseFloat(item.price) || 0,
+                currency: item.currency || '€',
+                sizes: item.sizes || ['Talla única'],
+                colors: item.colors || ['Color único'],
+                image: item.image || (item.images && item.images[0]) || `https://picsum.photos/seed/${item.id || Math.random()}/400/600`
+              }));
+              
+              setProducts(mappedProducts);
+            } catch (err) {
+              console.error('Error cargando productos:', err);
+              setError('No se pudieron cargar los productos. Por favor, intenta nuevamente más tarde.');
+              setProducts([]);
+            } finally {
+              setLoading(false);
+            }
+          };
+
+          loadProducts();
+        }, []);
+
+        const onClear = () => setFilters({ 
+          designer: new Set(), 
+          category: new Set(), 
+          size: new Set(), 
+          color: new Set() 
+        });
+
+        const addToCart = (product) => {
+          setCart(prevCart => {
+            const existingItem = prevCart.find(item => item.id === product.id);
+            if (existingItem) {
+              return prevCart.map(item =>
+                item.id === product.id
+                  ? { ...item, qty: item.qty + 1 }
+                  : item
+              );
+            } else {
+              return [...prevCart, { ...product, qty: 1 }];
+            }
+          });
+        };
+
+        const filtered = useMemo(() => {
+          return products.filter(p => {
+            if(query && !(`${p.title} ${p.designer} ${p.category}`.toLowerCase().includes(query.toLowerCase()))) 
+              return false;
+            if(filters.designer.size > 0 && ![...filters.designer].includes(p.designer)) 
+              return false;
+            if(filters.category.size > 0 && ![...filters.category].includes(p.category)) 
+              return false;
+            if(filters.size.size > 0 && !p.sizes.some(s => filters.size.has(s))) 
+              return false;
+            if(filters.color.size > 0 && !p.colors.some(c => filters.color.has(c))) 
+              return false;
+            return true;
+          }).sort((a,b) => {
+            if(sort === 'price-asc') return a.price - b.price;
+            if(sort === 'price-desc') return b.price - a.price;
+            return 0;
+          });
+        }, [products, filters, sort, query]);
+
+        const cartCount = cart.reduce((total, item) => total + (item.qty || 1), 0);
+
+        return (
+          <div style={{minHeight:'100vh', background:'#f1f5f9'}}>
+            <Header 
+              cartCount={cartCount} 
+              onToggleFilters={() => setFiltersOpen(v => !v)} 
+              query={query} 
+              setQuery={setQuery}
+              onToggleCart={() => setShowCart(v => !v)}
+            />
+            
+            <main style={{maxWidth:1100,margin:'16px auto',display:'grid',gridTemplateColumns: filtersOpen ? '280px 1fr' : '1fr',gap:16,padding: '0 16px'}}>
+              {filtersOpen && !loading && !error && products.length > 0 && (
+                <div>
+                  <Filters products={products} filters={filters} setFilters={setFilters} onClear={onClear} />
+                </div>
+              )}
+              
+              <div>
+                {loading ? (
+                  <div className="loading">Cargando productos...</div>
+                ) : error ? (
+                  <div className="error">
+                    <div style={{fontWeight:'bold',marginBottom:'8px'}}>Error</div>
+                    <div>{error}</div>
+                  </div>
+                ) : (
+                  <>
+                    <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',marginBottom:16,background:'#fff',padding:'12px 16px',borderRadius:'8px',boxShadow:'0 1px 3px rgba(0,0,0,0.1)'}}>
+                      <div style={{color:'#6b7280'}}>
+                        {filtered.length} producto{filtered.length !== 1 ? 's' : ''}
+                      </div>
+                      <div>
+                        <select 
+                          value={sort} 
+                          onChange={(e) => setSort(e.target.value)}
+                          style={{padding:'8px 12px',border:'1px solid #ddd',borderRadius:'6px',background:'#fff',cursor:'pointer'}}
+                        >
+                          <option value="recommendation">Recomendación</option>
+                          <option value="price-asc">Precio (bajo a alto)</option>
+                          <option value="price-desc">Precio (alto a bajo)</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill, minmax(220px, 1fr))',gap:16}}>
+                      {filtered.map(p => (
+                        <ProductCard 
+                          key={p.id} 
+                          p={p} 
+                          onOpen={(prod) => setSelected(prod)} 
+                          onAddToCart={addToCart}
+                        />
+                      ))}
+                    </div>
+                    
+                    {filtered.length === 0 && products.length > 0 && (
+                      <div style={{textAlign:'center',padding:'40px 20px',background:'#fff',borderRadius:'8px',marginTop:'20px'}}>
+                        No se encontraron productos con los filtros aplicados
+                      </div>
+                    )}
+
+                    {products.length === 0 && !loading && !error && (
+                      <div style={{textAlign:'center',padding:'40px 20px',background:'#fff',borderRadius:'8px',marginTop:'20px'}}>
+                        No hay productos disponibles
+                      </div>
+                    )}
+                  </>
+                )}
+              </div>
+            </main>
+            
+            {showCart && <CartPanel cart={cart} setCart={setCart} onClose={() => setShowCart(false)} />}
+            
+            <ProductModal product={selected} onClose={() => setSelected(null)} onAddToCart={addToCart} />
+            
+            <footer style={{textAlign:'center',padding:'24px 16px',color:'#6b7280',marginTop:'40px',borderTop:'1px solid #e5e7eb',background:'#fff'}}>
+              Tienda Demo — Productos cargados desde API externa
+            </footer>
+          </div>
+        );
+      }
+
+      ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+    </script>
+  </body>
+</html>
